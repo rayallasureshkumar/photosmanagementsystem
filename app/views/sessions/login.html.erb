@@ -1,0 +1,18 @@
+<div class="border">
+<%= form_tag login_authuntication_sessions_path do %>
+<div class='btn'><%= link_to "Sign up",new_user_path %></div>
+<h1>login</h1>
+    <div><%= @errors %></div>
+    <div style = "text_align:left;">
+    	<%= label_tag :email, "email" %>
+        <%= text_field_tag :email %>
+    </div>
+    <div>
+        <%= label_tag :password,  "Password" %>
+    	<%= password_field_tag :password %>
+    </div>
+    <div>
+        <%= submit_tag "Login"%>
+    </div>
+    <%end%>
+  </div>

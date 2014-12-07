@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photosmanagementsystem</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<%if @current_user %>
+  <body>
+    <body style="background-color:#FFF;">
+      <div class="navbar navbar-inverse" id="pdf_link">
+        <div class="navbar-inner">
+          <p class="navbar-text pull-right">
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to "Log Out", logout_sessions_path, :class => "navbar-link" %>
+          </p>
+          <ul class="nav">
+             <li><%= link_to "AddAlbum",new_album_path %></li>
+             <li><%= link_to "Albums",albums_path %></li>
+             <li><%= link_to "Photos", photos_path %></li>
+             <li><%= link_to "Settings", "" %></li>
+          </ul>
+        </div>
+      </div>
+      
+<p>Loged in as :<%= link_to @current_user.email , :class => "navbar-link" %></p>
+<p>Photo Management System</p>
+<div class="unit">
+<ul id="myTab" class="nav nav-tabs">
+  <li class=" ">
+  <%= link_to "photos",photos_path %>
+  </li>
+  <li class="">
+  <%= link_to "albums",albums_path%>
+  </li>
+  <li class="">
+  <%= link_to "comments","" %>
+  </li>
+</ul>
+</div>
+        <%= yield %>
+    </body>
+  <%else%>
+    <body>
+      <%= yield%>
+    </body>
+  <%end%>
+</html>

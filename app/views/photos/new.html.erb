@@ -1,0 +1,19 @@
+<div style="padding-left: 30px;">
+	<%= form_for @photo do|f| %>
+		<div>
+			<%= f.label "PhotoName"%>
+			<%= f.text_field :name %>
+		</div>
+		<div>
+			<%= f.label "Discription"%>
+			<%= f.text_area :discription , :style =>"height:100px;" %>
+		</div>
+		<div>
+			<%= f.label "PhotoName"%>
+			<%= f.file_field :image %>
+		</div>
+		<div>
+			<%= f.submit "Save"%>
+		</div>
+	<%end%>
+</div>

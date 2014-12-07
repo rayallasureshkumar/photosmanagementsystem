@@ -1,0 +1,24 @@
+<div style="padding-left: 50px;">
+	<%= link_to "AddAlbum",new_album_path, :class => "btn"%>
+	<p>Total Albums :<%= @albums.count%></p>
+	<table class="table">
+		<tr>
+			<th>ID</th>
+			<th>AlbumName</th>
+			<th>Discription</th>
+			<th>photos</th>
+			<th>Created_at</th>
+			<th>Updated_at</th>
+		</tr>
+		<%@albums.each do|a|%>
+		<tr>
+			<td><%= a.id %></td>
+			<td><b><%=link_to a.name,album_path(a.id) %></b></td>
+			<td><%= a.discription%></td>
+			<td></td>
+			<td><%= a.created_at %></td>
+			<td><%= a.updated_at %></td>
+		</tr>
+		<%end%>
+	</table>
+</div>

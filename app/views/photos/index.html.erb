@@ -1,0 +1,40 @@
+<div class="page-unit",style="padding-left: 50px;">
+<div id="myCarousel" class="carousel slide">
+<div class="carousel-inner">
+<div class="active item">
+<center>
+<%= link_to @current_user.email %>
+</center>
+</div>
+<div class="item">
+<center>
+<!-- <a href="http://photosmanagement.herokuapp.com/photos/10"> -->
+</center>
+</div>
+</div>
+<a class="carousel-control left" data-slide="prev" href="#myCarousel">‹</a>
+<a class="carousel-control right" data-slide="next" href="#myCarousel">›</a>
+</div>
+
+<div style="padding-left: 100px;padding-right: 100px;">
+	<p>Total Photos :<%= @photos.count%></p>
+	<table class="table">
+		<tr>
+		
+			<th>photoName</th>
+			<th>Discription</th>
+			<th>photos</th>
+			<th>Created_at</th>
+			<th>Updated_at</th>
+		</tr>
+		<%@photos.each do|a|%>
+		<tr>
+			<td><%=link_to a.name, "" %></td>
+			<td><%= a.discription%></td>
+			<td></td>
+			<td><%= a.created_at %></td>
+			<td><%= a.updated_at %></td>
+		</tr>
+		<%end%>
+	</table>
+</div>

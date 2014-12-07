@@ -1,0 +1,15 @@
+<div style="padding-left: 30px;">
+	<%= form_for @album do|f| %>
+		<div>
+			<%= f.label "AlbumName"%>
+			<%= f.text_field :name %>
+		</div>
+		<div>
+			<%= f.label "Discription"%>
+			<%= f.text_area :discription , :style =>"height:100px;" %>
+		</div>
+		<div>
+			<%= f.submit "Save"%>
+		</div>
+	<%end%>
+</div>
